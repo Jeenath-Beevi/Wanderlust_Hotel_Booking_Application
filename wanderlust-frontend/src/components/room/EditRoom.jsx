@@ -118,7 +118,6 @@ const EditRoom = () => {
 							{imagePreview && (
 								<img
 									src={`data:image/jpeg;base64,${imagePreview}`}
-									//src={imagePreview}
 									alt="Preview room photo"
 									style={{ maxWidth: "400px", maxHeight: "400px" }}
 									className="mt-3"

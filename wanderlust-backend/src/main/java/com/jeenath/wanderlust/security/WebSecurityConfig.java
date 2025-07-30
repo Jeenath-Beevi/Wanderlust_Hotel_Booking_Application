@@ -28,11 +28,13 @@ public class WebSecurityConfig {
 
     @Bean
     public AuthTokenFilter authenticationTokenFilter() {
+
         return new AuthTokenFilter();
     }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
+
         return new BCryptPasswordEncoder();
     }
 

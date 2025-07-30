@@ -92,6 +92,7 @@ const FindBooking = () => {
 				<form onSubmit={handleFormSubmit} className="col-md-6">
 					<div className="input-group mb-3">
 						<input
+							required
 							className="form-control"
 							type="text"
 							id="confirmationCode"

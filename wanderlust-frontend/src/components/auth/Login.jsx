@@ -31,8 +31,6 @@ const Login = () => {
             handleLogin(token)
 			auth.handleLogin(token)
 			navigate(redirectUrl, { replace: true })
-           // navigate("/")
-           // window.location.reload()
 		} else {
 			setErrorMessage("Invalid username or password. Please try again.")
 		}

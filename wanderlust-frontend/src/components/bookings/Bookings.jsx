@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { cancelBooking, getAllBookings } from '../utils/ApiFunctions'
 import Header from '../common/Header'
 import BookingsTable from './BookingsTable'
+import { Link } from "react-router-dom"
 
 const Bookings = () => {
 
@@ -34,6 +35,7 @@ const Bookings = () => {
 	}
 
   return (
+
     <section style={{ backgroundColor: "whitesmoke" }}>
 			<Header title={"Existing Bookings"} />
 			{error && <div className="text-danger">{error}</div>}
@@ -46,7 +48,10 @@ const Bookings = () => {
 				/>
 				
 			)}
+			<Link to={'/admin'} className="btn btn-outline-hotel ms-5 mb-5">Back</Link>
 		</section>
+
+	
   )
 }
 

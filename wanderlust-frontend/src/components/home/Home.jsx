@@ -12,13 +12,15 @@ const Home = () => {
 	const location = useLocation()
 
 	const message = location.state && location.state.message
-	const currentUser = localStorage.getItem("userId")
+	const { user } = useAuth()
 
   return (
     <section>
 			{message && <p className="text-warning px-5">{message}</p>}
-			{currentUser && (
-				<h6 className="text-success text-center"> You are logged-In as {currentUser}</h6>
+			{user && (
+				<h6 className="text-success text-center">
+					You are logged in as {user.sub}
+				</h6>
 			)}
    
 			<MainHeader />

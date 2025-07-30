@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import DateSlider from '../common/DateSlider'
+import RoomPaginator from '../common/RoomPaginator'
 import {
   parseISO,
   format,
@@ -14,7 +15,11 @@ import {
 const BookingsTable = ({ bookingInfo, handleBookingCancellation }) => {
 
     const [filteredBookings, setFilteredBookings] = useState(bookingInfo)
-	
+	const [currentPage, setCurrentPage] = useState(1)
+	const bookingsPerPage = 6
+	const totalPages = Math.ceil(filteredBookings.length / bookingsPerPage)
+	const startIndex = (currentPage - 1) * bookingsPerPage
+	const currentBookings = filteredBookings.slice(startIndex, startIndex + bookingsPerPage)
 
 	const filterBooknigs = (startDate, endDate) => {
     	if (!startDate || !endDate) {
@@ -82,9 +87,9 @@ const BookingsTable = ({ bookingInfo, handleBookingCancellation }) => {
 					</tr>
 				</thead>
 				<tbody className="text-center">
-					{filteredBookings.map((booking, index) => (
+					{currentBookings.map((booking, index) => (
 						<tr key={booking.id}>
-							<td>{index + 1}</td>
+							<td>{startIndex + index + 1}</td>
 							<td>{booking.id}</td>
 							<td>{booking.room.id}</td>
 							<td>{booking.room.roomType}</td>
@@ -108,6 +113,14 @@ const BookingsTable = ({ bookingInfo, handleBookingCancellation }) => {
 				</tbody>
 			</table>
 			{filteredBookings.length === 0 && <p> No booking found for the selected dates</p>}
+
+			{filteredBookings.length > bookingsPerPage && (
+  			<RoomPaginator
+   				currentPage={currentPage}
+    			totalPages={totalPages}
+    			onPageChange={setCurrentPage}
+ 			 />
+				)}
 		</section>
     )
 }

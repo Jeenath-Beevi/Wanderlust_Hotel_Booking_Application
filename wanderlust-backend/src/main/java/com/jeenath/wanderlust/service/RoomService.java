@@ -71,7 +71,7 @@ public class RoomService implements IRoomService{
 
     @Override
     public Room updateRoom(Long roomId, String roomType, BigDecimal roomPrice, byte[] photoBytes) {
-       // Room room = roomRepository.findById(roomId).get();
+
         Room room = roomRepository.findById(roomId)
                 .orElseThrow(() -> new ResourceNotFoundException("Room not found"));
         if (roomType != null) room.setRoomType(roomType);

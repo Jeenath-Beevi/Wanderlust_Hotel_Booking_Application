@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { getRoomTypes } from '../utils/ApiFunctions'
-
+import { useAuth } from '../auth/AuthProvider'
 
 const RoomTypeSelector = ({ handleRoomInputChange, newRoom }) => {
 
+	const { user } = useAuth()
     const [roomTypes, setRoomTypes] = useState([""])
 	const [showNewRoomTypeInput, setShowNewRoomTypeInput] = useState(false)
 	const [newRoomType, setNewRoomType] = useState("")
@@ -26,6 +27,7 @@ const RoomTypeSelector = ({ handleRoomInputChange, newRoom }) => {
 		}
 	}
     
+	const isAdmin = Array.isArray(user?.roles) ? user.roles.includes("ROLE_ADMIN") : user?.roles === "ROLE_ADMIN"
 
   return (
     <>
@@ -44,7 +46,7 @@ const RoomTypeSelector = ({ handleRoomInputChange, newRoom }) => {
 						}}
 						value={newRoom.roomType}>
 						<option value="">Select a room type</option>
-						<option value={"Add New"}>Add New</option>
+						{isAdmin && <option value={"Add New"}>Add New</option>}
 						{roomTypes.map((type, index) => (
 							<option key={index} value={type}>
 								{type}
@@ -69,7 +71,7 @@ const RoomTypeSelector = ({ handleRoomInputChange, newRoom }) => {
 					)}
 				</div>
 			)}
-    
+   
 
     </>
   )

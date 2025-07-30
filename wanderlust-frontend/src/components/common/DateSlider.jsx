@@ -4,6 +4,7 @@ import 'react-date-range/dist/theme/default.css'
 import { DateRangePicker } from 'react-date-range'
 
 const DateSlider = ({ onDateChange, onFilterChange }) => {
+  
   const [dateRange, setDateRange] = useState({
     startDate: new Date(),
     endDate: new Date(),

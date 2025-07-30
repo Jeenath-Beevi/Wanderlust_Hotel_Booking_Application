@@ -12,10 +12,8 @@ const Logout = () => {
 		navigate("/", { state: { message: " You have been logged out!" } })
 	}
 
-	//const isLoggedIn = auth.user !== null
-	const isLoggedIn = localStorage.getItem("token")
-  return isLoggedIn ? (
-    <>
+	return (
+		<>
 			<li>
 				<Link className="dropdown-item" to={"/profile"}>
 					Profile
@@ -28,7 +26,8 @@ const Logout = () => {
 				Logout
 			</button>
 		</>
-  ) : null
+	)
+
 }
 
 export default Logout

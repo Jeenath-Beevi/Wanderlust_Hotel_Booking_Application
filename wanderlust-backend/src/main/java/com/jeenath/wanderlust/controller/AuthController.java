@@ -3,8 +3,6 @@ package com.jeenath.wanderlust.controller;
 
 import com.jeenath.wanderlust.exception.UserAlreadyExistsException;
 import com.jeenath.wanderlust.model.User;
-//import com.jeenath.wanderlust.repository.RoleRepository;
-//import com.jeenath.wanderlust.repository.UserRepository;
 import com.jeenath.wanderlust.request.LoginRequest;
 import com.jeenath.wanderlust.response.JwtResponse;
 import com.jeenath.wanderlust.security.jwt.JwtUtils;

@@ -12,7 +12,6 @@ const BookingSummary = ({ booking, payment, isFormValid, onConfirm }) => {
 	const [isProcessingPayment, setIsProcessingPayment] = useState(false)
 	const navigate = useNavigate()
 
-	//console.log("Booking Date .......", booking.checkInDate)
 	const handleConfirmBooking = () => {
 		setIsProcessingPayment(true)
 		setTimeout(() => {

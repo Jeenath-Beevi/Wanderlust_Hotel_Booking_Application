@@ -87,7 +87,7 @@ const ExistingRoom = () => {
 				<>
 					<section className="mt-5 mb-5 container">
 						<div className="d-flex justify-content-between mb-3 mt-5">
-							<h2>Existing Rooms</h2>
+							<h2 className="hotel-color">Existing Rooms</h2>
 						</div>
 
 						<Row>
@@ -147,6 +147,7 @@ const ExistingRoom = () => {
 							totalPages={calculateTotalPages(filteredRooms, roomsPerPage, rooms)}
 							onPageChange={handlePaginationClick}
 						/>
+						<Link to={'/admin'} className="btn btn-outline-hotel ml-5">Back</Link>
 					</section>
 				</>
 			)}
@@ -155,13 +156,3 @@ const ExistingRoom = () => {
 }
 
 export default ExistingRoom
-
-// import React from 'react'
-
-// const ExistingRoom = () => {
-//   return (
-//     <div>ExistingRoom</div>
-//   )
-// }
-
-// export default ExistingRoom

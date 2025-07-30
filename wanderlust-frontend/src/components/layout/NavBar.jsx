@@ -12,8 +12,8 @@ const NavBar = () => {
 		setShowAccount(!showAccount)
 	}
 
-	 const isLoggedIn = localStorage.getItem("token")
-	 const userRole = localStorage.getItem("userRole")
+	 const isLoggedIn = !!user
+	 const isAdmin = Array.isArray(user?.roles) ? user.roles.includes("ROLE_ADMIN") : user?.roles === "ROLE_ADMIN"
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary px-5 shadow mt-5 sticky-top">
@@ -41,7 +41,7 @@ const NavBar = () => {
 							</NavLink>
 						</li>
                     
-						{isLoggedIn && userRole === "ROLE_ADMIN" && (
+						{isLoggedIn && isAdmin && (
 							<li className="nav-item">
 								<NavLink className="nav-link" aria-current="page" to={"/admin"}>
 									Admin

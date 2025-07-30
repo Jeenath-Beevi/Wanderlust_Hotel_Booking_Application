@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import moment from 'moment'
 import { getUser,getBookingsByUserId, deleteUser } from '../utils/ApiFunctions'
+
 const Profile = () => {
 
     const [user, setUser] = useState({

@@ -100,19 +100,19 @@ body {
 
 
 .parallax {
-  background-image: url("./assets/images/parallex.webp"); 
+  background-image: url("./assets/images/lobby.jpeg"); 
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 50vh;
+  height: 60vh;
 }
 
 .header {
   position: relative;
   height: 150px;
   background-size: cover;
-  background-image: url("./assets/images/service.jfif"); 
+  background-image: url("./assets/images/Service.jpg"); 
   background-position: center center;
 }
 .header-title {
@@ -200,7 +200,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-     transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     color: #fff;
     justify-content: flex-start;
   }
@@ -217,6 +217,19 @@ body {
 .header-banner {
   position: relative;
   height: 500px;
+}
+
+/* The header Admin */
+.header-admin {
+  position: relative;
+  height: 200px;
+  background-size: cover;
+  background-image: url("./assets/images/Admin.jpg"); 
+  background-position: center;
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+  text-align: center;
 }
 
 @media only screen and (max-width: 768px) {

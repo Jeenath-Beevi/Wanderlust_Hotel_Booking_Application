@@ -43,11 +43,6 @@ public class RoleService implements IRoleService {
     }
 
     @Override
-    public Role findByName(String name) {
-        return roleRepository.findByName(name).get();
-    }
-
-    @Override
     public User removeUserFromRole(Long userId, Long roleId) {
         Optional<User> user = userRepository.findById(userId);
         Optional<Role>  role = roleRepository.findById(roleId);

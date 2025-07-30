@@ -24,12 +24,6 @@ const currentUser = localStorage.getItem("userId")
 		numOfChildren: ""
 	})
 
-    const [roomInfo, setRoomInfo] = useState({
-        photo : "",
-        roomType :"",
-        roomPrice : ""
-    })
-
 	 const { roomId } = useParams()
 	 const navigate = useNavigate()
 
@@ -38,7 +32,6 @@ const currentUser = localStorage.getItem("userId")
 		setBooking({ ...booking, [name]: value })
 		setErrorMessage("")
 	}
-
 
 	const getRoomPriceById = async (roomId) => {
 		try {
