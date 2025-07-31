@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: wanderlust-backend
+    rootDir: wanderlust-backend
+    runtime: docker
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:mysql://root:oLDbRQFNhZrXEIbMblycdOgIbyayIpJf@tramway.proxy.rlwy.net:46101/railway
+      - key: SPRING_DATASOURCE_USERNAME
+        value: root
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: oLDbRQFNhZrXEIbMblycdOgIbyayIpJf
+      - key: PORT
+        value: 8080
