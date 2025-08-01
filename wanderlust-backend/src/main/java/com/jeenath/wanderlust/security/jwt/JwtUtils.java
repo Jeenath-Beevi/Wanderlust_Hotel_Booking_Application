@@ -28,7 +28,6 @@ public class JwtUtils {
 
     public String generateJwtTokenForUser(Authentication authentication){
         HotelUserDetails userPrincipal = (HotelUserDetails) authentication.getPrincipal();
-      //  System.out.println("UserName from JWT Utils :"+ userPrincipal.getUsername());
         List<String> roles = userPrincipal.getAuthorities()
                 .stream()
                 .map(GrantedAuthority::getAuthority).toList();
