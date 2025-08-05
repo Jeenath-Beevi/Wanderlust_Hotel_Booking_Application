@@ -2,7 +2,6 @@ package com.jeenath.wanderlust.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.http.HttpHeaders;
@@ -24,7 +23,7 @@ public class CorsConfig {
 
     @Bean
     public FilterRegistrationBean corsFilter(){
-    //public CorsConfigurationSource corsConfigurationSource(){
+
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
@@ -45,7 +44,6 @@ public class CorsConfig {
         config.setMaxAge(MAX_AGE);
         source.registerCorsConfiguration("/**", config);
         FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source));
-        //UrlBasedCorsConfigurationSource bean = new UrlBasedCorsConfigurationSource();
         bean.setOrder(CORS_FILTER_ORDER);
         return bean;
     }

@@ -45,7 +45,6 @@ export async function getRoomTypes() {
 /* This function gets all rooms from the database */
 export async function getAllRooms() {
 	try {
-		console.log("Base URL:", import.meta.env.VITE_API_BASE_URL)
 		const result = await api.get("/rooms/all-rooms")
 		return result.data
 	} catch (error) {
