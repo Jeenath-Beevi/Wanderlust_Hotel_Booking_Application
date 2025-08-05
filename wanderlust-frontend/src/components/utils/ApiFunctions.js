@@ -1,7 +1,8 @@
 import axios from "axios"
 
 export const api = axios.create({
-	baseURL: "http://localhost:8080"
+	//baseURL: "http://localhost:8080"
+	baseURL: import.meta.env.VITE_API_BASE_URL
 })
 
 export const getHeader = () => {
@@ -43,6 +44,7 @@ export async function getRoomTypes() {
 /* This function gets all rooms from the database */
 export async function getAllRooms() {
 	try {
+		console.log("Base URL:", import.meta.env.VITE_API_BASE_URL)
 		const result = await api.get("/rooms/all-rooms")
 		return result.data
 	} catch (error) {
