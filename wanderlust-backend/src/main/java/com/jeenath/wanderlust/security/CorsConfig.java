@@ -23,8 +23,8 @@ public class CorsConfig {
     private static final int CORS_FILTER_ORDER = -102;
 
     @Bean
-   // public FilterRegistrationBean corsFilter()
-    public CorsConfigurationSource corsConfigurationSource(){
+    public FilterRegistrationBean corsFilter(){
+    //public CorsConfigurationSource corsConfigurationSource(){
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
@@ -44,9 +44,9 @@ public class CorsConfig {
                 HttpMethod.DELETE.name()));
         config.setMaxAge(MAX_AGE);
         source.registerCorsConfiguration("/**", config);
-        //FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source));
-        UrlBasedCorsConfigurationSource bean = new UrlBasedCorsConfigurationSource();
-        //bean.setOrder(CORS_FILTER_ORDER);
+        FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source));
+        //UrlBasedCorsConfigurationSource bean = new UrlBasedCorsConfigurationSource();
+        bean.setOrder(CORS_FILTER_ORDER);
         return bean;
     }
 

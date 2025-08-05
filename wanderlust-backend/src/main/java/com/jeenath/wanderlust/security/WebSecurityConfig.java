@@ -55,8 +55,7 @@ public class WebSecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.cors(withDefaults())
-                .csrf(AbstractHttpConfigurer:: disable)
+        http.csrf(AbstractHttpConfigurer:: disable)
                 .exceptionHandling(
                         exception -> exception.authenticationEntryPoint(jwtAuthEntryPoint))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
@@ -68,5 +67,8 @@ public class WebSecurityConfig {
         return http.build();
     }
 
+//        http.cors(withDefaults())
+//            .csrf(AbstractHttpConfigurer:: disable)
+//                .exceptionHandling(
 
 }
