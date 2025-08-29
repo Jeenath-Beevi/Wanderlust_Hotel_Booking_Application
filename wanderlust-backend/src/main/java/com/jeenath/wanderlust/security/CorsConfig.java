@@ -30,7 +30,7 @@ public class CorsConfig {
         //config.addAllowedOrigin("http://localhost:5173");
         config.setAllowedOrigins(List.of(
                 "http://localhost:5173",                          // Local frontend
-                "https://wanderlust-hotel-booking-application.netlify.app/"           // Deployed Netlify frontend
+                "https://wanderlust-hotel-booking-application.netlify.app"           // Deployed Netlify frontend
         ));
         config.setAllowedHeaders(Arrays.asList(
                 HttpHeaders.AUTHORIZATION,
